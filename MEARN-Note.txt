@@ -539,8 +539,8 @@ CSS - Cascading style Sheet
 
     ----------------------------------
      REACT
-    -------------------------------        
- 1. javascript library used to build fast,interactive user interfaces,especially single page application.
+    ----------------------------------        
+ 1. React is a free javascript library used to build fast,interactive user interfaces,especially single page application.
 
  2. A library is a collection of tools/functions that helps you to do one specific job, and you control how and where to use it.
  3. A single-page application(SPA) is a web application that load only one HTML page / and then updates content dynamically 
@@ -593,13 +593,15 @@ CSS - Cascading style Sheet
        3. Diffing (Reconilation) : React compare the old vs new DOM
        4. Effecient update : only change the nodes are updated in the real DOM
  13. Styling react components
-     1.inline styling :by providind as js object,whwer ket and values should be in camelCase
+     1.inline styling :by providind as js object,where key and values should be in camelCase
      2.extrnal styling :Import css file in component and follow
      3.style using css module files :to create css module files using extension as module.css
 
  14. Components : building block of react application ,Reusable piece of code and used to build UI
+     
     -create a js/jsx file  with filename starts with capital letter
     -create components 2 types :
+
     1-using class :using JS class, create class it has to inherit from react component class,it returns jsx code from its 
       'render' method, class should exported
          -using props property of react component class     
@@ -608,15 +610,17 @@ CSS - Cascading style Sheet
 
     2-using function :used pure JS functions , create function name same as file name ,and export the function.
      function must return jsx code
-        -JS Pure function : Alwaya return the same output for the same inputs,Does not change anything outside the function
+        -JS Pure function : Alwayas return the same output for the same inputs,Does not change anything outside the function
         -stateless components
+
         -Life cycle phase of component:
              -Mounting Phase : component is created & added to DOM
-                -constructor() : Initialize state (class)
-                -render() : return jsx
-                -componentsDidMount() : runs after first render.
+             in mountin phase predefind methods
+                1-constructor() : Initialize state in the (class)
+                2-render() : return jsx
+                3-componentsDidMount() : runs after first render.
               -Updating ( component rerenders due to changes)
-                  -render()  : re-render UI 
+                  again call -render()  : re-render UI 
                   -componentDidUpdate() :Run after updates
             -UnMounting Phase : (component removed from DOM)
                 -componentWillUnmount()  : Cleanup
@@ -628,12 +632,13 @@ CSS - Cascading style Sheet
  16. Event handling in react
        -Binding function without arguments        : to call function use its name only and no need of paranthesis
        -Binding function with arguments           : to call the function use arrow function body.
-       -Binding function with arguments as events : to call the function use arrow function argument will give you the "events" and it can be passed to its function body to call function with paranthesis and arguments as same event
+       -Binding function with arguments as events : to call the function use arrow function argument will give you the "events"
+        and it can be passed to its function body to call function with paranthesis and arguments as same event
  
  17. State : Used to store data in components whenever state changes, it render UI automatically.
        -State is an object, state is mutable,updated using a setter function (setState())/ updated directly to virtual DOM
 
- 18. Hooks : predefined function used to provide recact component Features to functional component.
+ 18. Hooks : predefined function used to provide react component Features to functional component.
              -All hook name start with 'use' keyword
       -Rules to call hooks in functional component
 
@@ -646,7 +651,7 @@ CSS - Cascading style Sheet
 
         1-useState : used to manage component state. return 2 arguments first is state value and second is function to update state.
              state can store any type of data.
-          syntax : const [stateName , state updating function name] = useState(initial)
+          syntax : const [stateName , state updating function name] = useState(initial-value)
 
         2-useEffect : used to provide side effects to component, which handle lifecycle events (mount,update,unmount)
                      sideeffect 
@@ -659,8 +664,8 @@ CSS - Cascading style Sheet
                     1. No dependancy :side effects will applay to component all the time,it may lead to crash the app.
                     2. Empty array as dependancy : side effeccts
                     3. Array with value as state/props/variables as dependancy: side effects will applay
-                     at the time of component creation/loaded to DOM and whenever the Values in dependancy change.
-                     it similar to updating phase.
+                       at the time of component creation/loaded to DOM and whenever the Values in dependancy change.
+                       it similar to updating phase.
         3 useRef hook : access DOM elements or persist values without rerenders
         4-useMemo hook :memmarize expensive calculations
         5-useCallback :memorize functions to prevent recreation  
@@ -674,6 +679,8 @@ CSS - Cascading style Sheet
 19. conditional Rendering :used to display different UI elements based on a condition,
        -conditionak rendering in Js with help of conditional statement (if,if-else)
        -conditional rendering in jsx use only operator like ternaory /truthy operator
+            -Ternary Operator :  condition ? statement execute when condition true : statement execute condition false
+            - Truthy Operator : condition && when condition true
 
 20. List handling in react : Use Map method , should ()
     -Key : Unique identifire for each elements,React uses keys to identify which item changwd added or removed.
